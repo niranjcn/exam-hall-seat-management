@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media screen {
+  .print-only {
+    display: none;
+  }
+}
+
+@media print {
+  .screen-only {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  .page-break {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: white !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 0.5cm;
+  }
+
+  /* Preserve all colors and backgrounds */
+  .bg-green-800,
+  .bg-green-900,
+  .from-green-800,
+  .to-green-900 {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Preserve borders */
+  .border,
+  .border-yellow-400,
+  .border-gray-300,
+  .border-gray-200 {
+    border-style: solid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Preserve backgrounds */
+  .bg-blue-50,
+  .bg-blue-100,
+  .bg-gray-50,
+  .bg-gray-100,
+  .bg-yellow-400,
+  .bg-white,
+  .bg-green-600,
+  .bg-brown-700 {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ensure classroom board is visible */
+  .classroom-board {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Preserve rounded corners */
+  .rounded,
+  .rounded-lg,
+  .rounded-xl,
+  .rounded-full {
+    border-radius: inherit !important;
+  }
+
+  /* Ensure gap spacing is maintained */
+  .gap-4,
+  .space-x-1,
+  .space-x-3,
+  .space-x-4 {
+    gap: inherit !important;
+  }
+
+  /* Preserve flex layouts */
+  .flex,
+  .flex-1,
+  .justify-around {
+    display: flex !important;
+  }
+
+  /* Ensure shadows are visible if possible */
+  .shadow,
+  .shadow-md,
+  .shadow-lg {
+    box-shadow: inherit !important;
+  }
+}
+
